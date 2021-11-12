@@ -1,11 +1,14 @@
 
 import React, { useState } from 'react';
-import { Form, Button, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Form, Button, Nav, Spinner, Alert } from 'react-bootstrap';
+import { Link,useHistory } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Signup = () => {
 
     const [loginData,setLoginData] = useState({});
+    const history = useHistory();
+    const {user,registerUser,isLoading,authError} = useAuth();
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -18,29 +21,36 @@ const Signup = () => {
     }
 
     const handleSignup = (e) => {
-        if(loginData.Password !== loginData.Confirm_Password){
+        if(loginData.password !== loginData.password1) {
             alert('Please enter your right password');
             return;
         }
+        registerUser(loginData.email,loginData.password,loginData.name,history);
         e.preventDefault();
     }
 
     return (
         <div>
             <h3 className="d-flex justify-content-center mt-5">Please Sign Up Here</h3>
-            <Form onSubmit={handleSignup} className=" w-50 container container-fluid my-4">
+            {!isLoading && <Form onSubmit={handleSignup} className=" w-50 container container-fluid my-4">
+
+                <Form.Group  className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>User Name </Form.Label>
+                    <Form.Control onBlur={handleOnBlur} name="name" type="text" placeholder="Enter name" />
+                </Form.Group>
+
                 <Form.Group  className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="Email" type="email" placeholder="Enter email" />
+                    <Form.Control onBlur={handleOnBlur} name="email" type="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group  className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="Password" type="password" placeholder="Enter Password" />
+                    <Form.Control onBlur={handleOnBlur} name="password" type="password" placeholder="Enter Password" />
                 </Form.Group>
                 <Form.Group  className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control onBlur={handleOnBlur} name="Confirm_Password" type="password" placeholder="Confirm Password" />
+                    <Form.Control onBlur={handleOnBlur} name="password1" type="password" placeholder="Confirm Password" />
                 </Form.Group>
             
                 <Button className="w-25 p-2"variant="primary" type="submit">
@@ -48,7 +58,17 @@ const Signup = () => {
                 </Button>
                 {/* Go to Sign Up Page*/}
                 <Nav.Link as={Link} to="/login" className="fw-bold m-3">Already Signed Up? Please Log In</Nav.Link> 
-            </Form>
+            </Form>}
+            {isLoading && <Spinner animation="border" />}
+
+            {user?.email && <Alert variant="success">
+                User signed up successfully!
+            </Alert>}
+            {
+                authError && <Alert variant="danger">
+                {authError.message || authError}
+            </Alert>
+            }
         </div>
     );
 };

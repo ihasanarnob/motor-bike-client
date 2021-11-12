@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Menubar = () => {
+    const {user,logout} = useAuth();
     return (
         <div>
              <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg" >
@@ -11,17 +13,16 @@ const Menubar = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
+                        <Nav.Link as={Link} to="/featured">Featured Bikes</Nav.Link>
                         <Nav.Link as={Link} to="/purchase">Purchase</Nav.Link>
                         <Nav.Link as={Link} to="/manageOrders">Manage Orders</Nav.Link>
 
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                        {/* {user?.email ?
-                            <Button onClick={logOut} variant="light">Logout</Button> :
+                        {user?.email ?
+                            <Button className ="mx-2" onClick={logout} variant="light">Logout</Button> :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                         <Navbar.Text>
-                            Signed in as: <a href="#login">{user?.displayName}</a>
-                        </Navbar.Text> */}
+                            Welcome : <a style={{textDecoration: "none"}} href="#login">{user?.displayName}</a>
+                        </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

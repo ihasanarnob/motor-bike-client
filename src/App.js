@@ -12,10 +12,15 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Error404 from './Pages/Error404/Error404';
 import Login from './Pages/Login/Login/Login';
 import Signup from './Pages/Login/Signup/Signup';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Purchase from './Pages/Purchase/Purchase';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Featured from './Pages/Featured/Featured';
 
 function App() {
   return (
     <div className="">
+    <AuthProvider>
      <Router>
         <Menubar></Menubar>
         <Switch>
@@ -25,6 +30,12 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <Route path="/featured">
+            <Featured></Featured>
+          </Route>
+          <PrivateRoute path="/purchase">
+            <Purchase></Purchase>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -40,6 +51,7 @@ function App() {
           </Switch>
           <Footer></Footer>
       </Router>
+    </AuthProvider>
     </div>
   );
 }
