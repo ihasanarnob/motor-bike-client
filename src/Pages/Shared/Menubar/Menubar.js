@@ -15,7 +15,7 @@ const Menubar = () => {
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/featured">Featured Bikes</Nav.Link>
                         <Nav.Link as={Link} to="/purchase">Purchase</Nav.Link>
-                        <Nav.Link as={Link} to="/manageOrders">Manage Orders</Nav.Link>
+                        <Nav.Link as={Link} to="/addProducts">Add Products</Nav.Link>
 
                         {user?.email ?
                             <Button className ="mx-2" onClick={logout} variant="light">Logout</Button> :

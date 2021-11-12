@@ -16,6 +16,7 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Purchase from './Pages/Purchase/Purchase';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Featured from './Pages/Featured/Featured';
+import AddProducts from './Pages/AddProducts/AddProducts';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/featured">
             <Featured></Featured>
+          </Route>
+          <Route path="/addProducts">
+            <AddProducts></AddProducts>
           </Route>
           <PrivateRoute path="/purchase">
             <Purchase></Purchase>
