@@ -17,6 +17,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Featured from './Pages/Featured/Featured';
 import AddProducts from './Pages/AddProducts/AddProducts';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/featured">
             <Featured></Featured>
+          </Route>
+          <Route path="/placeOrder/:id">
+            <PlaceOrder></PlaceOrder>
           </Route>
           <Route path="/addProducts">
             <AddProducts></AddProducts>

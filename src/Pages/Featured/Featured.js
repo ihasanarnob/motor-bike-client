@@ -17,6 +17,7 @@ const Featured = () => {
         data.email = user.email;
         console.log(data);
 
+        // my orders////
         fetch("http://localhost:5000/purchase", {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -47,7 +48,8 @@ const Featured = () => {
                         <h6 className="card-text"> BDT. {info.price}</h6>
                     </div>
                     <div className="card-footer">
-                        <Link to ="/purchase" >
+                        <Link to = {`/placeOrder/${info._id}`} >
+                        {/* <button className="btn btn-primary">Proceed Purchase</button> */}
                         <button onClick={()=>handlePurchase(index)} className="btn btn-primary">Proceed Purchase</button>
                         </Link>
                     </div>
