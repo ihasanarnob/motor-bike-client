@@ -14,7 +14,7 @@ const Menubar = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/featured">Featured Bikes</Nav.Link>
-                        <Nav.Link as={Link} to="/purchase">Purchase</Nav.Link>
+                        <Nav.Link as={Link} to="/purchase">My Purchase</Nav.Link>
                         <Nav.Link as={Link} to="/addProducts">Add Products</Nav.Link>
 
                         {user?.email ?

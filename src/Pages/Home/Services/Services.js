@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
 
@@ -23,13 +24,10 @@ const Services = () => {
                         <h5 className="card-title">{service.name}</h5>
                         <p className="card-text">{service.description}</p>
                         <h6 className="card-text"> BDT. {service.price}</h6>
-                        <Button>Buy Now</Button>
-                    </div>
-                    {/* <div className="card-footer">
-                        <Link to ="/booking" >
-                        <button onClick={()=>handleBooking(index)} className="btn btn-primary">Proceed Booking</button>
+                        <Link to = {`/placeOrder/${service._id}`} >
+                        <button className="btn btn-primary">Proceed Purchase</button>
                         </Link>
-                    </div> */}
+                    </div>
                     </div>
                 </div>  )
                 }

@@ -1,36 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
 
 const Featured = () => {
     const [bikeInfo,setBikeInfo] = useState([]);
-    const {user} = useAuth();
 
     useEffect(() => {
         fetch('http://localhost:5000/featured')
         .then(res => res.json())
         .then(data => setBikeInfo(data))
     },[]);
-
-    const handlePurchase = (index) => {
-        const data = bikeInfo[index];
-        data.email = user.email;
-        console.log(data);
-
-        // my orders////
-        fetch("http://localhost:5000/purchase", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(data),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            console.log(result.insertedId);
-            if (result.insertedId) {
-                alert('Booking Proceeded')
-            }
-          });
-      };
 
 
     return (
@@ -49,8 +27,7 @@ const Featured = () => {
                     </div>
                     <div className="card-footer">
                         <Link to = {`/placeOrder/${info._id}`} >
-                        {/* <button className="btn btn-primary">Proceed Purchase</button> */}
-                        <button onClick={()=>handlePurchase(index)} className="btn btn-primary">Proceed Purchase</button>
+                        <button className="btn btn-primary">Proceed Purchase</button>
                         </Link>
                     </div>
                     </div>
