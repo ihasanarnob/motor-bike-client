@@ -18,6 +18,11 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Featured from './Pages/Featured/Featured';
 import AddProducts from './Pages/AddProducts/AddProducts';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Payment from './Pages/Payment/Payment';
+import Reviews from './Pages/Home/Reviews/Reviews';
+import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
+import ManageAllProducts from './Pages/ManageAllProducts/ManageAllProducts';
 
 function App() {
   return (
@@ -35,6 +40,21 @@ function App() {
           <Route path="/featured">
             <Featured></Featured>
           </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/payment">
+            <Payment></Payment>
+          </PrivateRoute>
+          <PrivateRoute path="/reviews">
+            <Reviews></Reviews>
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </PrivateRoute>
+          <PrivateRoute path="/manageProducts">
+            <ManageAllProducts></ManageAllProducts>
+          </PrivateRoute>
           <PrivateRoute path="/placeOrder/:id">
             <PlaceOrder></PlaceOrder>
           </PrivateRoute>

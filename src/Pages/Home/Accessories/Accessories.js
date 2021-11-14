@@ -20,7 +20,7 @@ const Accessories = () => {
                     <Card.Body>
                     <Card.Title>Goggles & Gloves</Card.Title>
                     <Card.Text>
-                        <h6>Price:$76</h6>
+                        Price:$76
                     </Card.Text>
                     </Card.Body>
                 </Card>
@@ -31,7 +31,7 @@ const Accessories = () => {
                     <Card.Body>
                     <Card.Title>Canvas Shoes</Card.Title>
                     <Card.Text>
-                    <h6>Price:$80</h6>
+                    Price:$80
                     </Card.Text>
                     </Card.Body>
                 </Card>
@@ -42,7 +42,7 @@ const Accessories = () => {
                     <Card.Body>
                     <Card.Title>Mavericks Helmet</Card.Title>
                     <Card.Text>
-                    <h6>Price:$69</h6>
+                    Price:$69
                     </Card.Text>
                     </Card.Body>
                 </Card>
@@ -53,7 +53,7 @@ const Accessories = () => {
                     <Card.Body>
                     <Card.Title>Driving Jacket</Card.Title>
                     <Card.Text>
-                        <h6>Price : $100 </h6>
+                        Price : $100 
                     </Card.Text>
                     </Card.Body>
                 </Card>
@@ -64,7 +64,7 @@ const Accessories = () => {
                     <Card.Body>
                     <Card.Title>ATV Tires</Card.Title>
                     <Card.Text>
-                    <h6>Price:$60</h6>
+                    Price:$60
                     </Card.Text>
                     </Card.Body>
                 </Card>

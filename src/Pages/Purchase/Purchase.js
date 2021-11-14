@@ -34,10 +34,7 @@ const Purchase = () => {
 
     return (
         <div className="container">
-            <div className="my-5 p-3 text-primary bg-light">
-            <h5> User Name : {user.displayName} </h5>
-             <h5> Logging email: {user.email} </h5>
-            </div>
+
             <div className="container row row-cols-1 row-cols-md-3 g-4">
             {
                 orders.map(order=> <div key={order._id} className="col">

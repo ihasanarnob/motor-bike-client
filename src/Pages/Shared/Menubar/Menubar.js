@@ -13,12 +13,13 @@ const Menubar = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/featured">Featured Bikes</Nav.Link>
-                        <Nav.Link as={Link} to="/purchase">My Purchase</Nav.Link>
-                        <Nav.Link as={Link} to="/addProducts">Add Products</Nav.Link>
+                        <Nav.Link as={Link} to="/featured">Featured Bikes</Nav.Link>                        
 
                         {user?.email ?
-                            <Button className ="mx-2" onClick={logout} variant="light">Logout</Button> :
+                            <>
+                            <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                            <Button className ="mx-2" onClick={logout} variant="light">Logout</Button>
+                            </> :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                         <Navbar.Text>
                             Welcome : <a style={{textDecoration: "none"}} href="#login">{user?.displayName}</a>
