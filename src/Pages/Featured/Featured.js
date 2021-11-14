@@ -5,7 +5,7 @@ const Featured = () => {
     const [bikeInfo,setBikeInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/featured')
+        fetch('https://fast-taiga-86694.herokuapp.com/featured')
         .then(res => res.json())
         .then(data => setBikeInfo(data))
     },[]);

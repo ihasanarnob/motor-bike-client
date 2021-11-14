@@ -6,7 +6,7 @@ const Reviews = () => {
     const { register, handleSubmit,reset } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/addReviews',{
+        fetch('https://fast-taiga-86694.herokuapp.com/addReviews',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)

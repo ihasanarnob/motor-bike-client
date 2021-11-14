@@ -8,7 +8,7 @@ const Purchase = () => {
     const [orders,setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchase/${email}`)
+        fetch(`https://fast-taiga-86694.herokuapp.com/purchase/${email}`)
         .then(res => res.json())
         .then(data => setOrders(data));
     },[email]);
@@ -16,7 +16,7 @@ const Purchase = () => {
     const handleDeleteOrder = (id) => {
       const deleteConfirmation = window.confirm('Are you sure you want to cancel your order?')
       if(deleteConfirmation){
-        const url = `http://localhost:5000/purchase/${id}`
+        const url = `https://fast-taiga-86694.herokuapp.com/purchase/${id}`
         fetch(url,{
           method : 'DELETE',
         })

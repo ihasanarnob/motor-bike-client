@@ -14,7 +14,7 @@ const PlaceOrder = () => {
 
 // Place Orders
     useEffect(() => {
-        fetch( `http://localhost:5000/placeOrder/${id}` )
+        fetch( `https://fast-taiga-86694.herokuapp.com/placeOrder/${id}` )
         .then(res => res.json())
         .then(data => setOrder(data))
     },[])
@@ -35,7 +35,7 @@ const PlaceOrder = () => {
         console.log(data);
 
         // my orders////
-        fetch("http://localhost:5000/purchase", {
+        fetch("https://fast-taiga-86694.herokuapp.com/purchase", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),
