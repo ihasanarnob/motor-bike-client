@@ -10,9 +10,9 @@ const PostedReviews = () => {
         .then(data => setReviews(data))
     },[]);
     return (
-        <div>
-            <h3>What Our Customers Say</h3>
-            <div className="container row row-cols-2 row-cols-md-4 g-4 ">
+        <div className="container">
+            <h3 className="d-flex justify-content-center">What Our Customers Say</h3>
+            <div className=" row row-cols-2 row-cols-md-4 g-4 ">
             {
                 reviews.map(review => <Card key={review._id} style={{ width: '18rem' }}>
                 <Card.Body>

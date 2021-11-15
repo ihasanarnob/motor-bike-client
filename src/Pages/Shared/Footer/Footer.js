@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <div className="container">
             <div className="d-flex justify-content-evenly mt-5">
 
                 <div>

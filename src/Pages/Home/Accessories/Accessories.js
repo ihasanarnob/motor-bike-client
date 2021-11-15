@@ -12,7 +12,7 @@ const Accessories = () => {
     return (
         <div className="container my-3">
             <h2 className="mt-5 mb-3">Shop Accessories Item</h2>
-            <Row xs={1} md={3} className="g-4">
+            <Row xs={1} md={3} className="g-3">
                 
                 <Col>
                 <Card>
